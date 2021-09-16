@@ -2,11 +2,13 @@
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-# Create conda environment with required dependencies
+# Create conda environment with required Python version
 conda-update:
+	conda update -n base -c defaults conda -y
 	conda env update --prune -f env.yml
-
-# Compile and install exact pip packages
-pip-tools:
+# After activating environment
+# Compile and install exact conda packages and required dependencies
+reqs:
 	pip-compile requirements.in
 	pip-sync requirements.txt
+	conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia -y
