@@ -12,3 +12,4 @@ reqs:
 	pip-compile requirements.in
 	pip-sync requirements.txt
 	conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia -y
+	conda install ipykernel -y
