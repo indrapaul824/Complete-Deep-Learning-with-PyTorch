@@ -1,6 +1,6 @@
 # Fundamentals
 
-This folder contains all the code files for prerequisites and the fundamentals required before trying out **Deep Learning**
+### This folder contains all the code files for prerequisites and the fundamentals required before trying out **Deep Learning**
 
 __[00_gpu_test.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/00_gpu_test.py)__ - contains the basic test to check if PyTorch can access the GPU for computation
 
