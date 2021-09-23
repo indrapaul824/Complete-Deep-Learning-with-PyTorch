@@ -10,10 +10,10 @@ __[02_dotproduct.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyT
 
 __[03_matmul.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/03_matmul.py)__ - contains the fundamentals of matrix multiplication and how to do matrix multiplication of two matrices
 
-__[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/04_softmax.py)__ - contains the fundamentals of a softmax function and how to implement it from scratch using Numpy as well as plotting the data on a chart.
+__[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/04_softmax.py)__ - contains the fundamentals of a softmax function and how to implement it from scratch using Numpy (from scratch) and PyTorch (using nn.Softmax) as well as plotting the data on a chart.
 
 
-### The data distribution obtained from Softmax using Numpy is:
+**The data distribution obtained from Softmax is:**
 
 
 | ![Softmax image](./plots/Softmax.svg) | ![Softmax Log image](./plots/Softmax_log.svg) |
@@ -21,3 +21,9 @@ __[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorc
 | *Softmax Distribution* | *Distribution in Logarithmic Space* |
 
 **We see that the Softmax Distribution in Logarithmic space is Linear.**
+
+| ![Softmax Compare image](./plots/Softmax_compare.svg) |
+|:--:|
+| *Comaprison of Softmax Distributions from Numpy and PyTorch* |
+
+**Not surprisingly, the above graph shows that both the distributions are similar and are perfectly and positively correlated**
