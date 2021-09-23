@@ -31,14 +31,14 @@ sigma = num / den
 print(sigma)
 
 # compare
-plt.plot(z, sigma, 'ko')
+plt.figure(figsize=(10, 8))
+plt.plot(z, sigma, 'ro')
 plt.xlabel('Original number (z)')
 plt.ylabel('Softmaxified $\sigma$')
 # plt.yscale('log')
 plt.title('$\sum\sigma$ = %g' %np.sum(sigma))
+plt.savefig("plots/Softmax.svg", dpi=150)
 plt.show()
-plt.savefig("plots/Softmax.jpg")
-
 
 """ Using PyTorch """
 # %% create a vector
