@@ -4,24 +4,72 @@ import numpy as np
 import torch
 
 """ Using numpy """
-#%% create a vector
-nv1 = np.array([1,2,3,4])
-nv2 = np.array([0,1,0,-1])
+#%% create some random matrices
+A = np.random.randn(3, 4)
+B = np.random.randn(4, 5)
+C = np.random.randn(3, 7)
 
-# dot product via function
-print(np.dot(nv1, nv2))
+# trying some multiplications
+print(np.matmul(A, B), '\n')
+print(np.round( A@B , 2), '\n')
+# print(np.round( A@C , 2)) --> Dimension mismatch
+# print(np.round( B@C , 2)) --> Dimension mismatch
+print(np.round( C.T@A , 2), '\n')
 
-# dot product via computation
-print(np.sum( nv1*nv2 ))
+# Output:
+
+# [[-3.72632912e-03  1.48098775e+00  2.95038685e-02  6.81612708e-01
+#    6.60582045e-01]
+#  [ 9.81723651e-01 -4.72642188e+00 -1.79092859e+00 -1.35584507e+00
+#   -5.47113189e-02]
+#  [ 2.72087123e+00  2.14167871e+00 -2.59119803e+00  1.40249201e+00
+#    4.71714819e-01]] 
+
+# [[-0.    1.48  0.03  0.68  0.66]
+#  [ 0.98 -4.73 -1.79 -1.36 -0.05]
+#  [ 2.72  2.14 -2.59  1.4   0.47]] 
+
+# [[-1.53  3.65  1.77 -0.87]
+#  [-0.75  1.01 -1.76 -0.57]
+#  [ 0.04 -0.33 -1.39  0.43]
+#  [-1.6   4.7   5.28 -1.15]
+#  [ 0.83 -2.52 -2.57  0.25]
+#  [-0.94  2.76  2.22 -0.01]
+#  [ 1.38 -3.18 -1.77  1.22]] 
 
 
 """ Using PyTorch """
-# %% create a vector
-tv1 = torch.tensor([1,2,3,4])
-tv2 = torch.tensor([0,1,0,-1])
+# %% create some random matrices
+A = torch.randn(3, 4)
+B = torch.randn(4, 5)
+C1 = np.random.randn(4, 7)
+C2 = torch.tensor(C1, dtype=torch.float)
 
-# dot product via function
-print(torch.dot(tv1, tv2))
+# trying some multiplications
+print(torch.matmul(A, B), '\n')
+# print(np.round( A@B.T , 2), '\n')  --> Dimension mismatch
+print(np.round( A@C1 , 2), '\n')
+print(np.round( A@C2 , 2), '\n')
+print(np.round( B.T@C1 , 2))
 
-# dot product via computation
-print(torch.sum( tv1*tv2 ))
+# Output:
+
+# tensor([[-0.0630, -0.9573,  0.7378,  0.2028,  1.4173],
+#         [-0.6404, -1.7981,  0.3207, -0.0900,  1.7104],
+#         [-0.2931,  2.0295,  3.5339, -1.3546, -1.2829]]) 
+
+# tensor([[-1.3100, -0.3600,  0.3900, -1.1400, -0.0400,  0.0900,  0.7300],
+#         [-1.2400, -0.6800,  0.5700, -2.2600, -0.6400,  0.1700, -0.0800],
+#         [-4.6800,  1.3800,  1.4800,  2.6600, -1.5200, -0.1000,  4.4200]],
+#        dtype=torch.float64) 
+
+# tensor([[-1.3100, -0.3600,  0.3900, -1.1400, -0.0400,  0.0900,  0.7300],
+#         [-1.2400, -0.6800,  0.5700, -2.2600, -0.6400,  0.1700, -0.0800],
+#         [-4.6800,  1.3800,  1.4800,  2.6600, -1.5200, -0.1000,  4.4200]]) 
+
+# tensor([[-0.0900, -0.7100, -0.9200,  1.0000,  2.3700, -0.4200,  0.7300],
+#         [ 0.5700,  1.8100,  0.5000,  1.6500, -1.1300,  0.3900,  1.0200],
+#         [-5.8800,  1.1000,  1.9500,  0.6800, -1.1300,  0.2700,  5.6400],
+#         [ 1.5600,  0.0400, -0.4700, -0.8300,  1.3200,  0.3100, -0.1300],
+#         [-0.3900,  0.9200,  1.2200, -3.5000, -0.6000,  1.2300,  1.7100]],
+#        dtype=torch.float64)
