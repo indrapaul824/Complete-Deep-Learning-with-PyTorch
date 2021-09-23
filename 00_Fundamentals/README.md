@@ -15,6 +15,6 @@ __[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorc
 The data distribution obtained from Softmax using Numpy is:
 ![Softmax image](./plots/Softmax.svg)
 
-<p align="center">
+<!-- <p align="center">
   <img src="./plots/Softmax.svg" width="350" title="Softmax.svg">
-</p>
+</p> -->
