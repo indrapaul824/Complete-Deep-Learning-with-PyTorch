@@ -14,6 +14,9 @@ print(np.dot(nv1, nv2))
 # dot product via computation
 print(np.sum( nv1*nv2 ))
 
+# Output:
+# -2
+# -2
 
 """ Using PyTorch """
 # %% create a vector
@@ -25,3 +28,7 @@ print(torch.dot(tv1, tv2))
 
 # dot product via computation
 print(torch.sum( tv1*tv2 ))
+
+# Output:
+# tensor(-2)
+# tensor(-2)
