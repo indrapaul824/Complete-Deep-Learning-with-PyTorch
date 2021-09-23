@@ -18,8 +18,27 @@ sigma = num / den
 print(sigma)
 
 # Output:
-# -2
-# -2
+# [0.09003057 0.24472847 0.66524096]
+
+#%% Repeat with some random integers and Plot data
+z = np.random.randint(-5, high=15, size=50)
+print(z)
+
+# compute softmax result
+num = np.exp(z)
+den = np.sum( np.exp(z) )
+sigma = num / den
+print(sigma)
+
+# compare
+plt.plot(z, sigma, 'ko')
+plt.xlabel('Original number (z)')
+plt.ylabel('Softmaxified $\sigma$')
+# plt.yscale('log')
+plt.title('$\sum\sigma$ = %g' %np.sum(sigma))
+plt.show()
+plt.savefig("plots/Softmax.jpg")
+
 
 """ Using PyTorch """
 # %% create a vector
