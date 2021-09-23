@@ -30,7 +30,7 @@ den = np.sum( np.exp(z) )
 sigma = num / den
 print(sigma)
 
-# compare
+# Plot data
 plt.figure(figsize=(6, 4))
 plt.plot(z, sigma, 'ro')
 plt.xlabel('Original number (z)')
@@ -42,16 +42,22 @@ plt.savefig("plots/Softmax.svg", dpi=150)
 plt.show()
 
 """ Using PyTorch """
-# %% create a vector
-tv1 = torch.tensor([1,2,3,4])
-tv2 = torch.tensor([0,1,0,-1])
+# %% Computation using nn.Softmax activation class
 
-# dot product via function
-print(torch.dot(tv1, tv2))
+# create an instance of the softmax activation class
+softfunc = nn.Softmax(dim=0)
 
-# dot product via computation
-print(torch.sum( tv1*tv2 ))
+# apply previously created data to the function
+sigmaT = softfunc( torch.Tensor(z) )
 
-# Output:
-# tensor(-2)
-# tensor(-2)
+# print the result
+print(sigmaT)
+
+# Compare plots
+plt.figure(figsize=(6, 4))
+plt.plot(sigma, sigmaT, 'ro')
+plt.xlabel('"Manual" Softmax')
+plt.ylabel('PyTorch nn.Softmax')
+plt.title(f'The two methods correlate at r = {np.corrcoef(sigma, sigmaT)[0, 1]}')
+plt.savefig("plots/Softmax_compare.svg", dpi=150)
+plt.show()
