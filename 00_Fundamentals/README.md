@@ -1,6 +1,6 @@
 # Fundamentals
 
-### This folder contains all the code files for prerequisites and the fundamentals required before trying out **Deep Learning**
+## This folder contains all the code files for prerequisites and the fundamentals required before trying out **Deep Learning**
 
 __[00_gpu_test.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/00_gpu_test.py)__ - contains the basic test to check if PyTorch can access the GPU for computation
 
@@ -13,9 +13,11 @@ __[03_matmul.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch
 __[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/04_softmax.py)__ - contains the fundamentals of a softmax function and how to implement it from scratch using Numpy as well as plotting the data on a chart.
 
 
-#### The data distribution obtained from Softmax using Numpy is:
+### The data distribution obtained from Softmax using Numpy is:
 
 
 | ![Softmax image](./plots/Softmax.svg) | ![Softmax Log image](./plots/Softmax_log.svg) |
 |:--:|:--:|
 | *Softmax Distribution* | *Distribution in Logarithmic Space* |
+
+**We see that the Softmax Distribution in Logarithmic space is Linear.**
