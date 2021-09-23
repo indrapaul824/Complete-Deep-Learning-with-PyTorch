@@ -31,7 +31,7 @@ sigma = num / den
 print(sigma)
 
 # compare
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(6, 4))
 plt.plot(z, sigma, 'ro')
 plt.xlabel('Original number (z)')
 plt.ylabel('Softmaxified $\sigma$')
