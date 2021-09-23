@@ -38,6 +38,7 @@ plt.ylabel('Softmaxified $\sigma$')
 # plt.yscale('log')
 plt.title('$\sum\sigma$ = %g' %np.sum(sigma))
 plt.savefig("plots/Softmax.svg", dpi=150)
+# plt.savefig("plots/Softmax_log.svg", dpi=150)
 plt.show()
 
 """ Using PyTorch """
