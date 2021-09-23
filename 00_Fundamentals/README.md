@@ -13,4 +13,4 @@ __[03_matmul.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch
 __[04_softmax.py](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/04_softmax.py)__ - contains the fundamentals of a softmax function and how to implement it from scratch using Numpy as well as plotting the data on a chart.
 
 The data distribution obtained from Softmax using Numpy is:
-![Softmax image](https://github.com/IndraP24/Complete-Deep-Learning-with-PyTorch/blob/main/00_Fundamentals/plots/Softmax.svg)
+![Softmax image](./plots/Softmax.svg)
