@@ -9,7 +9,7 @@ conda-update:
 # After activating environment
 # Compile and install exact conda packages and required dependencies
 reqs:
+	conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia -y
 	pip-compile requirements.in
 	pip-sync requirements.txt
-	conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia -y
 	conda install ipykernel -y
